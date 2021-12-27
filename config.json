@@ -1,0 +1,24 @@
+{
+    "env_config":{
+        "num_drones":1,
+        "EPISODE_LEN_SEC" : 300,
+        "wind_magnitude":0.01,
+        "trajectory":[[1,1,1], [2,1,1], [2,2,1], [1,2,1], [1,1,1]],
+        "trajectory_epsilon":0.1,
+		"predict_model_path":"/home/bumjin/mdpi_drone_paper/drone/train/predict_model/predictor.pt",
+        "position_freq_ratio":0.3,
+        "trajectory_num_in_sec":5
+    },
+    "rllib_config":{
+        "model" : "PPO",
+        "name" : "test",
+        "num_workers" : 0,
+        "num_gpus" : 1,
+        "local_dir" : "./checkpoint",
+        "checkpoint_freq" : 100,
+        "framework" : "torch",
+        "stop":{
+            "training_iteration" : 300
+        }
+    }
+}
